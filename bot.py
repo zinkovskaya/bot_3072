@@ -2,10 +2,12 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, Message
 from dotenv import load_dotenv
 from os import getenv
+from os import getcwd
 from data import load_data, save_data, game_data1
 
 load_dotenv()
-bot = telebot.TeleBot(getenv('TOKEN'))
+bot = telebot.TeleBot('6402997391:AAHTlIERxnTyRxkKS4XNLXl1-rfOSBnIxBc')
+#bot = telebot.TeleBot(getenv('TOKEN'))
 user_data = load_data()
 game_data = game_data1()
 
@@ -57,7 +59,8 @@ def message_start(message):
             "человечество.\n\n<i>Выберите действие, Ваши решения влияют на отношения, тайны и будущее общества. "
             "Продолжайте выбирать, и помните: каждое действие имеет свои последствия.</i>")
 
-    with open(r'C:\Users\Юля\PycharmProject\bot_3072\media\1.jpg', 'rb') as f:
+    path=f'{getcwd()}\\media\\1.jpg'
+    with open(path, 'rb') as f:
         bot.send_photo(
             message.chat.id,
             f,
@@ -106,9 +109,10 @@ def send_question(user_id):
     key = user_data[str(user_id)]['location']
     description = game_data[key]['description']
     photo = game_data[key]['media']
+    path = f'{getcwd()}\\media\\{photo}.jpg'
     markup = create_markup(user_data, user_id, game_data)
     if key != "planet_v" and key != "planet":
-        with open(photo, 'rb') as f:
+        with open(path, 'rb') as f:
             bot.send_photo(
                 chat_id=user_id,
                 photo=f,
@@ -120,7 +124,7 @@ def send_question(user_id):
             )
     elif key == "planet_v":
 
-        with open(photo, 'rb') as f:
+        with open(path, 'rb') as f:
             bot.send_photo(
                 chat_id=user_id,
                 photo=f,
@@ -130,7 +134,7 @@ def send_question(user_id):
                 parse_mode='html'
             )
     else:
-        with open(photo, 'rb') as f:
+        with open(path, 'rb') as f:
             bot.send_photo(
                 chat_id=user_id,
                 photo=f,
