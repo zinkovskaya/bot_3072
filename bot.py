@@ -6,8 +6,7 @@ from os import getcwd
 from data import load_data, save_data, game_data1
 
 load_dotenv()
-bot = telebot.TeleBot('6402997391:AAHTlIERxnTyRxkKS4XNLXl1-rfOSBnIxBc')
-#bot = telebot.TeleBot(getenv('TOKEN'))
+bot = telebot.TeleBot(getcwd('TOKEN'))
 user_data = load_data()
 game_data = game_data1()
 
@@ -59,7 +58,7 @@ def message_start(message):
             "человечество.\n\n<i>Выберите действие, Ваши решения влияют на отношения, тайны и будущее общества. "
             "Продолжайте выбирать, и помните: каждое действие имеет свои последствия.</i>")
 
-    path=f'{getcwd()}\\media\\1.jpg'
+    path=f'{getcwd()}/media/1.jpg'
     with open(path, 'rb') as f:
         bot.send_photo(
             message.chat.id,
