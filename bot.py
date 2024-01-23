@@ -1,6 +1,7 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, Message
 from dotenv import load_dotenv
+from os import getenv
 from data import load_data, save_data, game_data1
 
 load_dotenv()
