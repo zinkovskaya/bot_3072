@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 from data import load_data, save_data, game_data1
 
 load_dotenv()
-TOKEN = '6402997391:AAHTlIERxnTyRxkKS4XNLXl1-rfOSBnIxBc'
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot('TOKEN')
 user_data = load_data()
 game_data = game_data1()
 
@@ -124,8 +123,8 @@ def send_question(user_id):
             bot.send_photo(
                 chat_id=user_id,
                 photo=f,
-                caption=f'{description}\n'
-                        f'Теперь планета носит название <b>{user_data[str(user_id)]['user_name']}</b>!',
+                caption=f"{description}\n"
+                        f"Теперь планета носит название <b>{user_data[str(user_id)]['user_name']}</b>!",
                 reply_markup=markup,
                 parse_mode='html'
             )
