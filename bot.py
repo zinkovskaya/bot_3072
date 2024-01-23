@@ -165,4 +165,4 @@ def change_scales(user_id: str, user_answer: str):
     save_data(user_data)
 
 
-bot.polling(non_stop=True)
+bot.polling(none_stop=True)
