@@ -6,7 +6,7 @@ from os import getcwd
 from data import load_data, save_data, game_data1
 
 load_dotenv()
-bot = telebot.TeleBot(getcwd('TOKEN'))
+bot = telebot.TeleBot(getenv('TOKEN'))
 user_data = load_data()
 game_data = game_data1()
 
