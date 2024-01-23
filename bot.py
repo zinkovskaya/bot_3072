@@ -108,7 +108,7 @@ def send_question(user_id):
     key = user_data[str(user_id)]['location']
     description = game_data[key]['description']
     photo = game_data[key]['media']
-    path = f'{getcwd()}\\media\\{photo}.jpg'
+    path = f'{getcwd()}/media/{photo}.jpg'
     markup = create_markup(user_data, user_id, game_data)
     if key != "planet_v" and key != "planet":
         with open(path, 'rb') as f:
