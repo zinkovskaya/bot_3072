@@ -57,7 +57,7 @@ def message_start(message):
             "человечество.\n\n<i>Выберите действие, Ваши решения влияют на отношения, тайны и будущее общества. "
             "Продолжайте выбирать, и помните: каждое действие имеет свои последствия.</i>")
 
-    with open(r'C:\Users\Юля\PycharmProject\pythonProject_bot\media\1.jpg', 'rb') as f:
+    with open(r'C:\Users\Юля\PycharmProject\bot_3072\media\1.jpg', 'rb') as f:
         bot.send_photo(
             message.chat.id,
             f,
