@@ -5,7 +5,7 @@ from os import getenv
 from data import load_data, save_data, game_data1
 
 load_dotenv()
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot(getenv('TOKEN'))
 user_data = load_data()
 game_data = game_data1()
 
