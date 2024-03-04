@@ -30,4 +30,4 @@
 Для связи с разработчиками можно использовать следующие контакты:
 
 - [Telegram](https://t.me/ziinnger)
-- [Telegram channel](https://t.me/dura3500)
+- [Telegram channel](https://t.me/dura3900)
